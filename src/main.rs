@@ -20,6 +20,7 @@ enum UbiError {
 
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
+    println!("cargo:rustc-env=OPENSSL_DIR=/usr/include/openssl/", env::var("OPENSSL_DIR").unwrap());
     let cmd = cmd();
     let matches = cmd.get_matches();
     let res = init_logger(&matches);
