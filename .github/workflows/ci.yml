@@ -1,6 +1,13 @@
 name: Tests and release
 
-on: [push, pull_request]
+on:
+  issues:
+    types:
+      - closed
+  pull_request:
+    types:
+      - closed
+  push:
 
 env:
   CRATE_NAME: ubi
